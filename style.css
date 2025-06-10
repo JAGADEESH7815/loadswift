@@ -1,0 +1,196 @@
+/* Reset some defaults */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  background-color: #f8f8f8;
+  color: #333;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* Navbar */
+.navbar {
+  background: #fff;
+  padding: 1rem 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo {
+  float: left;
+  font-size: 1.5rem;
+  color: #007bff;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  float: right;
+  gap: 20px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.btn-login {
+  background: #007bff;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.btn-login:hover {
+  background: #0056b3;
+}
+
+/* Hero */
+.hero {
+  background: url('https://source.unsplash.com/1600x600/?truck,delivery') no-repeat center center/cover;
+  height: 60vh;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.btn-primary {
+  background: #007bff; 
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: #0056b3;
+}
+
+/* Services */
+.services {
+  padding: 4rem 0;
+  background: #fff;
+}
+
+.service-cards {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.card {
+  flex: 1;
+  background: #f1f1f1;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.card i {
+  font-size: 2rem;
+  color: #007bff;
+  margin-bottom: 1rem;
+}
+
+/* How It Works */
+.how-it-works {
+  padding: 4rem 0;
+}
+
+.steps {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.step {
+  flex: 1;
+  text-align: center;
+  position: relative;
+}
+
+.step span {
+  display: inline-block;
+  background: #007bff;
+  color: white;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+/* Footer */
+.footer {
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 2rem 0;
+}
+/* Book Load Page */
+.book-load-section {
+  padding: 4rem 0;
+  background-color: #fff;
+}
+
+.load-form {
+  background: #f9f9f9;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 700px;
+  margin: auto;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.1rem;
+}

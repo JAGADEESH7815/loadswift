@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book Your Load - LoadSwift</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="navbar">
+    <div class="container">
+      <h1 class="logo">LoadSwift</h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="book-load.html">Book Load</a></li>
+          <li><a href="#">Contact</a></li> 
+          <li><a href="#" class="btn-login">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Book Load Section -->
+  <section class="book-load-section">
+    <div class="container">
+      <h2>Book Your Load</h2>
+      <p>Fill in the details below to post your load and get matched with transporters instantly.</p>
+
+      <form id="loadForm" class="load-form">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Enter your full name" required />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required />
+        </div>
+
+        <div class="form-group">
+          <label for="pickup">Pickup Location</label>
+          <input type="text" id="pickup" name="pickup" placeholder="Enter pickup city/state" required />
+        </div>
+
+        <div class="form-group">
+          <label for="drop">Drop Location</label>
+          <input type="text" id="drop" name="drop" placeholder="Enter drop city/state" required />
+        </div>
+
+        <div class="form-group">
+          <label for="truck-type">Truck Type Needed</label>
+          <select id="truck-type" name="truck-type" required>
+            <option value="">Select Truck Type</option>
+            <option value="7FT">7FT Truck</option>
+            <option value="10FT">10FT Truck</option>
+            <option value="14FT">14FT Truck</option>
+            <option value="20FT">20FT Truck</option>
+            <option value="Container">Container</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="weight">Load Weight (in kg)</label>
+          <input type="number" id="weight" name="weight" placeholder="e.g., 1500" required />
+        </div>
+
+        <div class="form-group">
+          <label for="date">Expected Pickup Date</label>
+          <input type="date" id="date" name="date" required />
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Mobile Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX" required />
+        </div>
+
+        <button type="submit" class="btn-primary">Submit Load Details</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 LoadSwift. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
+<script>
+  document.getElementById('loadForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const formData = new FormData(this);
+    const data = Object.fromEntries(formData);
+
+    fetch('http://localhost:5000/api/loads', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
+    .then(res => res.json())
+    .then(data => {
+      alert('Load submitted successfully!');
+      console.log('Success:', data);
+    })
+    .catch(error => {
+      alert('Error submitting load.');
+      console.error('Error:', error);
+    });
+  });
+</script>
